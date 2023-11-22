@@ -1,5 +1,6 @@
 package com.example.foodpoint;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
@@ -7,11 +8,19 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.foodpoint.database.DatabaseAux;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.Firebase;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Registre extends AppCompatActivity {
 
@@ -66,6 +75,27 @@ public class Registre extends AppCompatActivity {
                         Toast.makeText(this, "Usuario agregado correctamente.", Toast.LENGTH_SHORT).show();
                         toMainActivity(view);
                     }
+
+
+                    FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
+                    Map<String,String> users = new HashMap<>();
+                    users.put("name",usuarioString);
+                    users.put("password",contraseniaString);
+
+                    firestoreDb.collection("users").document(usuarioString)
+                            .set(users)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    Log.d("Debug","bien");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("Error","Mal");
+                                }
+                            });
 
                 }else{
                     Toast.makeText(this, "Nombre de usuario ya usado.", Toast.LENGTH_SHORT).show();
