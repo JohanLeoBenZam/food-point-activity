@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "478766954390",
-    "project_id": "foodpoint-e63ba",
-    "storage_bucket": "foodpoint-e63ba.appspot.com"
+    "project_number": "235664696642",
+    "project_id": "foodpoint-be785",
+    "storage_bucket": "foodpoint-be785.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:478766954390:android:d99954fc1b404bcc614fb7",
+        "mobilesdk_app_id": "1:235664696642:android:8e407fc6693ff02f9894db",
         "android_client_info": {
           "package_name": "com.example.foodpoint"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyACIppCZAsT-e7eG2_CJbTL4REx5W2lbic"
+          "current_key": "AIzaSyCwGBKXtvk_ikh5MEadaVuC1HfoX6m9Ifw"
         }
       ],
       "services": {
