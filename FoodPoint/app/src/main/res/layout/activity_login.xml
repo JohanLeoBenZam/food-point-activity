@@ -10,7 +10,7 @@
         android:id="@+id/header2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/azul"
+        android:background="@color/seed"
         app:layout_constraintBottom_toTopOf="@+id/guidelineH20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
         android:id="@+id/header"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/azul"
+        android:background="@color/seed"
         app:layout_constraintBottom_toTopOf="@+id/guidelineH20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +56,7 @@
         android:id="@+id/footer"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/azul"
+        android:background="@color/seed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,28 +88,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.500684" />
+        app:layout_constraintGuide_percent="0.45" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineH40"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineH60"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6019152" />
+        app:layout_constraintGuide_percent="0.55" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/guidelineH50"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidelineV85"
+        app:layout_constraintStart_toStartOf="@id/guidelineV15"
         app:layout_constraintTop_toTopOf="@id/guidelineH40"
         app:startIconDrawable="@drawable/ic_persona">
 
@@ -127,8 +128,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/guidelineH60"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidelineV85"
+        app:layout_constraintStart_toStartOf="@id/guidelineV15"
         app:layout_constraintTop_toTopOf="@id/guidelineH50"
         app:startIconDrawable="@drawable/ic_llave"
         app:passwordToggleEnabled="true">
@@ -161,21 +162,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.63" />
+        app:layout_constraintGuide_percent="0.65" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineH71"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.71" />
+        app:layout_constraintGuide_percent="0.73" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineH76"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7647059" />
+        app:layout_constraintGuide_percent="0.82" />
 
     <TextView
         android:id="@+id/textRegistre"
@@ -183,7 +184,7 @@
         android:layout_height="wrap_content"
         android:gravity="right"
         android:text="¿Aun no tienes cuenta?"
-        android:textColor="@color/black"
+        android:textColor="@color/seed"
         app:layout_constraintBottom_toTopOf="@+id/guidelineH76"
         app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
         app:layout_constraintStart_toStartOf="@+id/guidelineV15"
@@ -194,27 +195,60 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="left"
+        android:onClick="toRegistreActivity"
         android:text="Registrate Aqui"
         android:textColor="#aa3a36"
         app:layout_constraintBottom_toTopOf="@+id/guidelineH76"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineV85"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guidelineV50"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH71"
-        android:onClick="toRegistreActivity"/>
+        app:layout_constraintTop_toTopOf="@+id/guidelineH71" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineV85"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.89" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineV15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.11" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recuerdame"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH63"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH60" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Olvide mi contraseña"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH63"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV50"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH60" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FoodPoint"
+        android:textSize="30dp"
+        android:textColor="@color/seed"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

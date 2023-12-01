@@ -41,7 +41,7 @@ public class Restaurantes extends AppCompatActivity {
                                 text.setText("Restaurante "+d.getString("name")+"\n");
                                 text.setGravity(Gravity.CENTER);
                                 text.setTypeface(null,Typeface.BOLD);
-                                text.setTextColor(getColor(R.color.black));
+                                text.setTextColor(getColor(R.color.md_theme_light_shadow));
                                 LinearLayout layout = findViewById(R.id.restaurantesL);
                                 layout.addView(imagen);
                                 layout.addView(text);

@@ -3,10 +3,12 @@ package com.example.foodpoint;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,6 +32,15 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         nameText = findViewById(R.id.usuarioBox);
         passText = findViewById(R.id.contraseniaBox);
+        TextView alert = findViewById(R.id.textView13);
+        alert.setOnClickListener(view -> {
+            new AlertDialog.Builder(this)
+                    .setTitle("¿Olvidaste tu contraseña?")
+                    .setMessage("Puedes recuperarla a través de tu correo electrónico.")
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show();
+        });
+
     }
 
     public void toRegistreActivity(View view){
